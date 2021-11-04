@@ -1,0 +1,11 @@
+main {
+    display: flex;
+}
+.weatherbox {
+    padding: 10px;
+    background-color: #7fffd4;
+}
+.recipes {
+    padding: 10px;
+    background-color: #deb887;
+}
