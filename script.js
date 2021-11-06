@@ -50,9 +50,21 @@ function fetchWeatherData(event){
     }
     //add event listener
 
+var choices = ["Breakfast", "Lunch", "Dinner"]
+var mealType
+
 function fetchRecipeData(event){
     event.preventDefault();
-    var mealType = "breakfast"
+
+    if (document.getElementById("breakfast").checked) {
+        mealType = choices[0]
+    }else if (document.getElementById("lunch").checked) {
+        mealType = choices[1]
+    }else if (document.getElementById('dinner').checked) {
+        mealType = choices[2]
+    }
+        
+    // var mealType = "breakfast"
     // add mealType id to radio buttons
     // var apiKey = '8da3cf957b3be5b0a78864d9cb374f8c'
     // var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + mealType + '&appid=' + apiKey
