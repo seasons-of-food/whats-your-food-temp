@@ -96,36 +96,38 @@ function fetchRecipeData(event){
         .then(function (recipeData) {
             console.log("recipe",recipeData);
             
-
+            var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+            var select = numbers[Math.floor(Math.random()*numbers.length)]
+            console.log(select)
+            var food = recipeData.hits[select]
             
-
             // name of food
             var foodname = document.createElement('p')
-            foodname.textContent = recipeData.hits[0].recipe.label
+            foodname.textContent = food.recipe.label
             recipesBox.appendChild(foodname)
             // image
             var foodimage = document.createElement('img')
-            foodimage.src =recipeData.hits[0].recipe.image
+            foodimage.src =food.recipe.image
             recipesBox.appendChild(foodimage)
             // cuisine type
             var cuisine = document.createElement('p')
-            cuisine.textContent = recipeData.hits[0].recipe.cuisineType
+            cuisine.textContent = food.recipe.cuisineType
             recipesBox.appendChild(cuisine)
             // diet labels
-            for (var i=0; i < recipeData.hits[0].recipe.dietLabels.length; i++) {
+            for (var i=0; i < food.recipe.dietLabels.length; i++) {
                 var dietLabels = document.createElement('p')
-                dietLabels.textContent = "diet: " + recipeData.hits[0].recipe.dietLabels[i]
+                dietLabels.textContent = "diet: " + food.recipe.dietLabels[i]
                 recipesBox.appendChild(dietLabels)
             }
             // ingredients list
-            for (var i=0; i < recipeData.hits[0].recipe.ingredientLines.length; i++) {
+            for (var i=0; i < food.recipe.ingredientLines.length; i++) {
                 var ingredient =document.createElement('p')
-                ingredient.textContent = "- " + recipeData.hits[0].recipe.ingredientLines[i]
+                ingredient.textContent = "- " + food.recipe.ingredientLines[i]
                 recipesBox.appendChild(ingredient)
             }
             // link to recipe
             var link = document.createElement('a')
-            link.href = recipeData.hits[0].recipe.url
+            link.href = food.recipe.url
             link.textContent = "Link to Recipe" 
             recipesBox.appendChild(link)
         }) 
