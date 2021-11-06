@@ -25,13 +25,13 @@ function fetchWeatherData(event){
         weatherBox.appendChild(cityName)
 
         var description = document.createElement('p')
-        description.textContent = weatherData.weather(0).description
+        description.textContent = weatherData.weather[0].description
         weatherBox.appendChild(description)
 
         var icon = document.createElement('img')
-        icon.src = "http://openweathermap.org/img/wn/" + weatherData.weather(0).icon + "@2x.png"
+        icon.src = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png"
         weatherBox.appendChild(icon)
-        console.log(weatherData.weather(0),icon)
+        console.log(weatherData.weather[0],icon)
 
         var currentTemp = document.createElement('p')
         currentTemp.textContent = "Current temperature:" + weatherData.main.temp + "\xB0"
