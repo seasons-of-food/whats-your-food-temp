@@ -42,7 +42,7 @@ function fetchWeatherData(event){
         weatherBox.appendChild(tempHigh)
 
         var tempLow = document.createElement('p')
-        tempLow.textContent = "Low temperature:" + weatherData.main.temp_main + "\xB0"
+        tempLow.textContent = "Low temperature:" + weatherData.main.temp_min + "\xB0"
         weatherBox.appendChild(tempLow)
 
         }) 
