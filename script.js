@@ -20,6 +20,10 @@ function fetchWeatherData(event){
         .then(function (weatherData) {
             console.log("weather",weatherData);
         
+        var temp = weatherData.main.temp
+        console.log("temp", temp)
+        localStorage.setItem("temp", JSON.stringify(temp))
+
         var cityName = document.createElement('p')
         cityName.textContent = weatherData.name 
         weatherBox.appendChild(cityName)
@@ -78,7 +82,10 @@ function fetchRecipeData(event){
         })
         .then(function (recipeData) {
             console.log("recipe",recipeData);
-           
+            
+            var temp2 = JSON.parse(localStorage.getItem("temp"))
+            console.log("temp2", temp2)
+
             // name of food
             var foodname = document.createElement('p')
             foodname.textContent = recipeData.hits[0].recipe.label
