@@ -67,12 +67,25 @@ function fetchRecipeData(event){
     }else if (document.getElementById('dinner').checked) {
         mealType = choices[2]
     }
-        
+
+
+    var temp2 = JSON.parse(localStorage.getItem("temp"))
+    console.log("temp2", temp2)
+                // 0                        1        2          3       4           5           6       7           8       9       10          11          12      13          14       
+    var options= ["Biscuits and cookies","bread","cereals","desserts","drinks","main course","pancake","preps","preserve","salad","sandwiches","side dish","soup","starter","sweets"];
+    var tempChoices 
+        if ( temp2 < 32) {
+            tempChoices= options[12] + "&dishType=" + options[1] + "&dishType=" + options[0]
+        } else if (temp2 > 32 && temp2 < 60) {
+            tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" +  options[7]
+        } else if (temp2 > 60 ) {
+            tempChoices = options[2] + "&dishType=" + options[3] + "&dishType=" + options[4] + "&dishType=" + options[6] + "&dishType=" + options[9] + "&dishType=" + options[13] + "&dishType=" + options[14]
+        }
     // var mealType = "breakfast"
     // add mealType id to radio buttons
     // var apiKey = '8da3cf957b3be5b0a78864d9cb374f8c'
     // var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + mealType + '&appid=' + apiKey
-    var requestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + mealType + "&app_id=ce747e67&app_key=8da3cf957b3be5b0a78864d9cb374f8c"
+    var requestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + mealType + "&app_id=ce747e67&app_key=8da3cf957b3be5b0a78864d9cb374f8c&dishType=" + tempChoices;
     
     
     fetch(requestUrl)
@@ -83,8 +96,8 @@ function fetchRecipeData(event){
         .then(function (recipeData) {
             console.log("recipe",recipeData);
             
-            var temp2 = JSON.parse(localStorage.getItem("temp"))
-            console.log("temp2", temp2)
+
+            
 
             // name of food
             var foodname = document.createElement('p')
