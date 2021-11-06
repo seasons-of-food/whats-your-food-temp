@@ -18,7 +18,7 @@ function fetchWeatherData(event){
             return response.json();
         })
         .then(function (weatherData) {
-            console.log(weatherData);
+            console.log("weather",weatherData);
         
         var cityName = document.createElement('p')
         cityName.textContent = weatherData.name 
@@ -31,6 +31,7 @@ function fetchWeatherData(event){
         var icon = document.createElement('img')
         icon.src = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png"
         weatherBox.appendChild(icon)
+        icon.classList.add("resize")
         console.log(weatherData.weather[0],icon)
 
         var currentTemp = document.createElement('p')
@@ -64,7 +65,37 @@ function fetchRecipeData(event){
             return response.json();
         })
         .then(function (recipeData) {
-            console.log(recipeData);
+            console.log("recipe",recipeData);
+           
+            // name of food
+            var foodname = document.createElement('p')
+            foodname.textContent = recipeData.hits[0].recipe.label
+            recipesBox.appendChild(foodname)
+            // image
+            var foodimage = document.createElement('img')
+            foodimage.src =recipeData.hits[0].recipe.image
+            recipesBox.appendChild(foodimage)
+            // cuisine type
+            var cuisine = document.createElement('p')
+            cuisine.textContent = recipeData.hits[0].recipe.cuisineType
+            recipesBox.appendChild(cuisine)
+            // diet labels
+            for (var i=0; i < recipeData.hits[0].recipe.dietLabels.length; i++) {
+                var dietLabels = document.createElement('p')
+                dietLabels.textContent = "diet: " + recipeData.hits[0].recipe.dietLabels[i]
+                recipesBox.appendChild(dietLabels)
+            }
+            // ingredients list
+            for (var i=0; i < recipeData.hits[0].recipe.ingredientLines.length; i++) {
+                var ingredient =document.createElement('p')
+                ingredient.textContent = "- " + recipeData.hits[0].recipe.ingredientLines[i]
+                recipesBox.appendChild(ingredient)
+            }
+            // link to recipe
+            var link = document.createElement('a')
+            link.href = recipeData.hits[0].recipe.url
+            link.textContent = "Link to Recipe" 
+            recipesBox.appendChild(link)
         }) 
     }
 
