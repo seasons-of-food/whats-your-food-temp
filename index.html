@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <title>Food Temp</title>
 </head>
 <body>
@@ -16,15 +16,15 @@
         <p>description of page?</p>
     </header>
     <form class=form>
-        <h2></h2>
+        <h2>Enter a City and Mealtime</h2>
         <input type='text' id='city' placeholder="city name"/>
-        <!-- check box? -->
+        <!-- Foundation CSS framework -->
         <div class="grid-x grid-padding-x">
             <fieldset class="large-5 cell">
-              <legend>Choose Your Favorite</legend>
-              <input type="radio" name="pokemon" value="Breakfast" id="pokemonRed" required><label for="pokemonRed">Red</label>
-              <input type="radio" name="pokemon" value="Lunch" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-              <input type="radio" name="pokemon" value="Dinner" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
+              <legend>Choose Your Mealtime</legend>
+              <input type="radio" value="Breakfast" id="breakfast" required><label for="breakfast">Breakfast</label>
+              <input type="radio" value="Lunch" id="lunch"><label for="lunch">Lunch</label>
+              <input type="radio" value="Dinner" id="dinner"><label for="dinner">Dinner</label>
             </fieldset>
           </div>
         <button id="submit">Submit</button>
@@ -33,7 +33,6 @@
         <section class="weatherbox"id="weatherbox">weather</section>
         <section class="recipes"id="recipes">recipes</section>
     </main>
-    <!-- <script src=“script.js”></script> -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 </body>
