@@ -10,7 +10,7 @@ function fetchWeatherData(event){
     var cityName = inputField.value
     // console.log(cityName);
     var apiKey = 'fd531081518e808eb0375251a19ac935'
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey
+    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=' + apiKey
  
     fetch(requestUrl)
     //if statement for empty input field
@@ -19,6 +19,32 @@ function fetchWeatherData(event){
         })
         .then(function (weatherData) {
             console.log(weatherData);
+        
+        var cityName = document.createElement('p')
+        cityName.textContent = weatherData.name 
+        weatherBox.appendChild(cityName)
+
+        var description = document.createElement('p')
+        description.textContent = weatherData.weather(0).description
+        weatherBox.appendChild(description)
+
+        var icon = document.createElement('img')
+        icon.src = "http://openweathermap.org/img/wn/" + weatherData.weather(0).icon + "@2x.png"
+        weatherBox.appendChild(icon)
+        console.log(weatherData.weather(0),icon)
+
+        var currentTemp = document.createElement('p')
+        currentTemp.textContent = "Current temperature:" + weatherData.main.temp + "\xB0"
+        weatherBox.appendChild(currentTemp)
+
+        var tempHigh = document.createElement('p')
+        tempHigh.textContent = "High temperature:" + weatherData.main.temp_max + "\xB0"
+        weatherBox.appendChild(tempHigh)
+
+        var tempLow = document.createElement('p')
+        tempLow.textContent = "Low temperature:" + weatherData.main.temp_main + "\xB0"
+        weatherBox.appendChild(tempLow)
+
         }) 
     }
     //add event listener
