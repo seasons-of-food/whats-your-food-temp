@@ -6,7 +6,7 @@ var recipesBox = document.querySelector("#recipes")
 
 function fetchWeatherData(event){
     event.preventDefault();
-    // console.log("hello")
+    weatherBox.innerHTML = ''
     var cityName = inputField.value
     // console.log(cityName);
     var apiKey = 'fd531081518e808eb0375251a19ac935'
@@ -20,8 +20,10 @@ function fetchWeatherData(event){
 
               } else {
                 alert('Error: Check city name. ' + response.statusText);
-                recipesBox.style.display = "none"
+                // recipesBox.style.display = "none"
+                weatherBox.style.display = "none"
                 return window.location.href="index.html";
+                // modal.setAttribute("class", "reveal")
               }
             })
             .catch(function (error) {
@@ -29,7 +31,7 @@ function fetchWeatherData(event){
         })
         .then(function (weatherData) {
             console.log("weather",weatherData);
-        
+            
         var temp = weatherData.main.temp
         console.log("temp", temp)
         localStorage.setItem("temp", JSON.stringify(temp))
@@ -61,6 +63,7 @@ function fetchWeatherData(event){
         weatherBox.appendChild(tempLow)
 
         }) 
+        inputField.value = ''
     }
     //add event listener
 
@@ -69,6 +72,7 @@ var mealType
 
 function fetchRecipeData(event){
     event.preventDefault();
+    recipesBox.innerHTML = ''
 
     if (document.getElementById("breakfast").checked) {
         mealType = choices[0]
@@ -106,6 +110,7 @@ function fetchRecipeData(event){
               } else {
                 alert('Error: Check city name. ' + response.statusText);
                 recipesBox.style.display = "none"
+                // weatherBox.style.display = "none"
                 return window.location.href="index.html";
              }
             })
@@ -114,6 +119,9 @@ function fetchRecipeData(event){
         })
         .then(function (recipeData) {
             console.log("recipe",recipeData);
+            // if (recipesBox.length) {
+            //     recipesBox.innerHTML = ""
+            // }
             
             var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
             var select = numbers[Math.floor(Math.random()*numbers.length)]
@@ -158,3 +166,4 @@ submitButton.addEventListener('click', fetchRecipeData)
 // Select all checked options
 //   var checkedEl = $('input:checked');
 //   var selected = [];
+// weatherBox.innerHTML = ""
