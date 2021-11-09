@@ -20,6 +20,7 @@ function fetchWeatherData(event){
 
               } else {
                 alert('Error: Check city name. ' + response.statusText);
+                recipesBox.style.display = "none"
                 return window.location.href="index.html";
               }
             })
@@ -104,6 +105,7 @@ function fetchRecipeData(event){
                 return response.json();
               } else {
                 alert('Error: Check city name. ' + response.statusText);
+                recipesBox.style.display = "none"
                 return window.location.href="index.html";
              }
             })
