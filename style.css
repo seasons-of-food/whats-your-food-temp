@@ -1,14 +1,69 @@
 main {
     display: flex;
 }
+
+header {
+    text-align: center;
+    border: 5px double black; 
+}
+
+/* body {
+    background-image: url("https://cdn.pixabay.com/photo/2014/06/16/23/10/spices-370114_960_720.jpg");
+    background-size: cover;
+} */
+
+#submit {
+    margin-bottom: 1rem;
+}
+
+#submit:hover {
+    box-shadow: rgb(80, 78, 78) 2px 2px 2px;
+    cursor:pointer;
+
+}
+
+@keyframes example {
+    from {background-color: rgb(245, 243, 243);}
+    to {background-color: rgb(89, 207, 236);}
+}
+
+button {
+    background-color: white;
+    animation-name: example;
+    animation-duration: 10s;
+    background-repeat: repeat;
+}
 .weatherbox {
     padding: 10px;
-    background-color: #7fffd4;
+    background-color: #ffffff8f;
+    border-right: 20px double rgb(104, 93, 128);
+    padding-right: 5rem;
 }
 .recipes {
     padding: 10px;
-    background-color: #deb887;
+    background-color: #aaadca63;
+    padding-right: 10rem;
+    border-right: 20px double rgb(104, 93, 128);
+}
+
+.drinks {
+    background-color: rgba(24, 51, 173, 0.418);
+    padding-right: 10rem;
 }
 .resize {
     
 }
+
+.cold {
+    background-image: repeating-linear-gradient(to bottom right, rgb(64, 60, 131), rgb(158, 235, 248), blue);
+
+}
+
+.headerCold {
+    background-image: url("https://media3.giphy.com/media/PkaZUCdVm2c5G/giphy.gif?cid=ecf05e47p4v5v9zwmmzxs823b35448ohja3unlq8iwdzykfi&rid=giphy.gif&ct=g");
+    /* background-size: cover; */
+    color: rgb(91, 124, 173);
+    text-shadow: white 1px 1px;
+
+}
+
