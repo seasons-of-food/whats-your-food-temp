@@ -15,7 +15,16 @@ function fetchWeatherData(event){
     fetch(requestUrl)
     //if statement for empty input field
         .then(function (response) {
-            return response.json();
+            if (response.ok) {
+                return response.json();
+
+              } else {
+                alert('Error: Check city name. ' + response.statusText);
+                return window.location.href="index.html";
+              }
+            })
+            .catch(function (error) {
+              alert('Unable to connect to APIs');
         })
         .then(function (weatherData) {
             console.log("weather",weatherData);
@@ -91,7 +100,15 @@ function fetchRecipeData(event){
     fetch(requestUrl)
     //if statement for empty input field
         .then(function (response) {
-            return response.json();
+            if (response.ok) {
+                return response.json();
+              } else {
+                alert('Error: Check city name. ' + response.statusText);
+                return window.location.href="index.html";
+             }
+            })
+            .catch(function (error) {
+              alert('Unable to connect to APIs');
         })
         .then(function (recipeData) {
             console.log("recipe",recipeData);
