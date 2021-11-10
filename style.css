@@ -68,8 +68,21 @@ button {
 
 .mild{
     background-image: repeating-linear-gradient(to bottom right, #b16031, rgb(242, 248, 158), rgb(255, 0, 0));
-
 }
 
+.headerMild {
+    background-image: url("https://media.giphy.com/media/3ohs7Mss6GTDau1unu/giphy.gif");
+    background-size: cover;
+}
 
+.hot {
+    background-image: repeating-linear-gradient(to bottom right, #F2F4C0, #E4E978, #CAD315);
+}
+
+.headerHot {
+    background-image: url("https://media.giphy.com/media/1g28Bb7svZ4L1edofy/giphy.gif");
+    background-size: cover;
+    color: white;
+    text-shadow: black 2px 2px;
+}
 

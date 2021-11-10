@@ -101,9 +101,12 @@ function fetchRecipeData(event) {
 
     } else if (temp2 > 32 && temp2 < 60) {
         tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" + options[7]
+        header.classList.add("headerMild")
         body.classList.add("mild")
     } else if (temp2 > 60) {
         tempChoices = options[2] + "&dishType=" + options[3] + "&dishType=" + options[4] + "&dishType=" + options[6] + "&dishType=" + options[9] + "&dishType=" + options[13] + "&dishType=" + options[14]
+        header.classList.add("headerHot")
+        body.classList.add("hot")
     }
     // var mealType = "breakfast"
     // add mealType id to radio buttons
