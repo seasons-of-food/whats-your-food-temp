@@ -2,10 +2,13 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css"/>
+    <!-- <link rel="stylesheet" href="style.css"/> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css"/>
     <title>Food Temp</title>
 </head>
 <body id ="body">
@@ -22,16 +25,20 @@
         <div class="grid-x grid-padding-x">
             <fieldset class="large-5 cell">
               <legend>Choose Your Mealtime</legend>
-              <input type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast">Breakfast</label>
-              <input type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch">Lunch</label>
-              <input type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner">Dinner</label>
+              <input class="input" type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast">Breakfast</label>
+              <input class="input" type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch">Lunch</label>
+              <input class="input" type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner">Dinner</label>
             </fieldset>
           </div>
         <button id="submit">Submit</button>
     </form>
-    <main>
-        <section class="weatherbox"id="weatherbox">weather</section>
-        <section class="recipes"id="recipes">recipes</section>
+    <main class="grid-x row">
+        <!-- <div class="row">
+            <div class="columns small-6">6 columns</div>
+            <div class="columns small-6">6 columns</div>
+          </div> -->
+        <div class="weatherbox columns small-6"id="weatherbox">weather</div>
+        <div class="recipes columns small-6"id="recipes">recipes</div>
     </main>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
