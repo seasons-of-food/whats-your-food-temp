@@ -14,6 +14,10 @@ header {
 
 #submit {
     margin-bottom: 1rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-size: 20px;
 }
 
 #submit:hover {
@@ -32,6 +36,8 @@ button {
     animation-name: example;
     animation-duration: 10s;
     background-repeat: repeat;
+    /* padding-right: 10rem;
+    border: 10px solid rgba(24, 51, 173, 0.418); */
 }
 .weatherbox {
     padding: 10px;
@@ -86,3 +92,16 @@ button {
     text-shadow: black 2px 2px;
 }
 
+#city {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+fieldset,
+label {
+    font-size: 20px;
+}
+
+/* label {
+    font-size: 1rem;
+} */
