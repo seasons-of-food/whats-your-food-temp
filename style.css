@@ -5,12 +5,14 @@ main {
 header {
     text-align: center;
     border: 5px double black; 
+    color: #800080;
+    text-shadow: #ffffff 2px 2px 2px;
 }
 
-/* body {
-    background-image: url("https://cdn.pixabay.com/photo/2014/06/16/23/10/spices-370114_960_720.jpg");
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/10/22/21/41/turmeric-2879382_960_720.jpg");
     background-size: cover;
-} */
+}
 
 #submit {
     margin-bottom: 1rem;
@@ -44,21 +46,25 @@ button {
     background-color: #ffffff8f;
     border-right: 20px double rgb(104, 93, 128);
     padding-right: 5rem;
+    font-size: 20px;
+    text-transform: capitalize;
 }
 .recipes {
     padding: 10px;
     background-color: #aaadca63;
     padding-right: 10rem;
     border-right: 20px double rgb(104, 93, 128);
+    font-size: 20px;
+    text-transform: capitalize;
 }
 
-.drinks {
+/* .drinks {
     background-color: rgba(24, 51, 173, 0.418);
     padding-right: 10rem;
 }
 .resize {
     
-}
+} */
 
 .cold {
     background-image: repeating-linear-gradient(to bottom right, rgb(64, 60, 131), rgb(158, 235, 248), blue);
@@ -93,15 +99,24 @@ button {
 }
 
 #city {
-    width: 50%;
+    width: 25%;
     margin-left: 1rem;
 }
 
-fieldset,
+fieldset {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    border-bottom: 20px double rgb(104, 93, 128);
+}
 label {
     font-size: 20px;
+    margin-bottom: 1rem;
 }
-
-/* label {
-    font-size: 1rem;
+h4 {
+    text-decoration: underline;
+}
+/* form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 } */

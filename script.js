@@ -42,7 +42,7 @@ function fetchWeatherData(event) {
             console.log("temp", temp)
             localStorage.setItem("temp", JSON.stringify(temp))
 
-            var cityName = document.createElement('p')
+            var cityName = document.createElement('h4')
             cityName.textContent = weatherData.name
             weatherBox.appendChild(cityName)
 
@@ -57,15 +57,15 @@ function fetchWeatherData(event) {
             console.log(weatherData.weather[0], icon)
 
             var currentTemp = document.createElement('p')
-            currentTemp.textContent = "Current temperature:" + weatherData.main.temp + "\xB0"
+            currentTemp.textContent = "Current temperature:" + weatherData.main.temp + "\xB0" + "F"
             weatherBox.appendChild(currentTemp)
 
             var tempHigh = document.createElement('p')
-            tempHigh.textContent = "High temperature:" + weatherData.main.temp_max + "\xB0"
+            tempHigh.textContent = "High temperature:" + weatherData.main.temp_max + "\xB0"+ "F"
             weatherBox.appendChild(tempHigh)
 
             var tempLow = document.createElement('p')
-            tempLow.textContent = "Low temperature:" + weatherData.main.temp_min + "\xB0"
+            tempLow.textContent = "Low temperature:" + weatherData.main.temp_min + "\xB0"+ "F"
             weatherBox.appendChild(tempLow)
 
         })
@@ -95,18 +95,18 @@ function fetchRecipeData(event) {
     var options = ["Biscuits and cookies", "bread", "cereals", "desserts", "drinks", "main course", "pancake", "preps", "preserve", "salad", "sandwiches", "side dish", "soup", "starter", "sweets"];
     var tempChoices
     if (temp2 < 32) {
-        tempChoices = options[12] + "&dishType=" + options[1] + "&dishType=" + options[0]
-        header.classList.add("headerCold")
-        body.classList.add("cold")
+        tempChoices = options[12] + "&dishType=" + options[1] + "&dishType=" + options[0];
+        header.classList.add("headerCold");
+        body.classList.add("cold");
 
     } else if (temp2 > 32 && temp2 < 60) {
-        tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" + options[7]
-        header.classList.add("headerMild")
-        body.classList.add("mild")
+        tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" + options[7];
+        header.classList.add("headerMild");
+        body.classList.add("mild");
     } else if (temp2 > 60) {
-        tempChoices = options[2] + "&dishType=" + options[3] + "&dishType=" + options[4] + "&dishType=" + options[6] + "&dishType=" + options[9] + "&dishType=" + options[13] + "&dishType=" + options[14]
-        header.classList.add("headerHot")
-        body.classList.add("hot")
+        tempChoices = options[2] + "&dishType=" + options[3] + "&dishType=" + options[4] + "&dishType=" + options[6] + "&dishType=" + options[9] + "&dishType=" + options[13] + "&dishType=" + options[14];
+        header.classList.add("headerHot");
+        body.classList.add("hot");
     }
     // var mealType = "breakfast"
     // add mealType id to radio buttons
@@ -120,12 +120,7 @@ function fetchRecipeData(event) {
         .then(function (response) {
             if (response.ok) {
                 return response.json();
-            } //else {
-            // alert('Error: Check city name. ' + response.statusText);
-            // recipesBox.style.display = "none"
-            // weatherBox.style.display = "none"
-            // return window.location.href = "index.html";
-            // }
+            } 
         })
         .catch(function (error) {
             // alert('Unable to connect to APIs');
@@ -145,7 +140,7 @@ function fetchRecipeData(event) {
             var food = recipeData.hits[select]
 
             // name of food
-            var foodname = document.createElement('p')
+            var foodname = document.createElement('h4')
             foodname.textContent = food.recipe.label
             recipesBox.appendChild(foodname)
             // image
@@ -154,15 +149,18 @@ function fetchRecipeData(event) {
             recipesBox.appendChild(foodimage)
             // cuisine type
             var cuisine = document.createElement('p')
-            cuisine.textContent = food.recipe.cuisineType
+            cuisine.textContent = "Cuisine: " + food.recipe.cuisineType
             recipesBox.appendChild(cuisine)
             // diet labels
             for (var i = 0; i < food.recipe.dietLabels.length; i++) {
                 var dietLabels = document.createElement('p')
-                dietLabels.textContent = "diet: " + food.recipe.dietLabels[i]
+                dietLabels.textContent = "Diet: " + food.recipe.dietLabels[i]
                 recipesBox.appendChild(dietLabels)
             }
             // ingredients list
+            ingredientTile = document.createElement('h4')
+            ingredientTile.textContent = "Ingredients"
+            recipesBox.appendChild(ingredientTile)
             for (var i = 0; i < food.recipe.ingredientLines.length; i++) {
                 var ingredient = document.createElement('p')
                 ingredient.textContent = "- " + food.recipe.ingredientLines[i]
