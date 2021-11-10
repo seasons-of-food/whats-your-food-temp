@@ -56,14 +56,20 @@ button {
 
 .cold {
     background-image: repeating-linear-gradient(to bottom right, rgb(64, 60, 131), rgb(158, 235, 248), blue);
-
 }
 
 .headerCold {
     background-image: url("https://media3.giphy.com/media/PkaZUCdVm2c5G/giphy.gif?cid=ecf05e47p4v5v9zwmmzxs823b35448ohja3unlq8iwdzykfi&rid=giphy.gif&ct=g");
-    /* background-size: cover; */
+    background-size: cover;
     color: rgb(91, 124, 173);
     text-shadow: white 1px 1px;
 
 }
+
+.mild{
+    background-image: repeating-linear-gradient(to bottom right, #b16031, rgb(242, 248, 158), rgb(255, 0, 0));
+
+}
+
+
 
