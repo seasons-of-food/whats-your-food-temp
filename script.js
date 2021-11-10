@@ -4,6 +4,11 @@ var weatherBox = document.querySelector("#weatherbox")
 var recipesBox = document.querySelector("#recipes")
 // console.log("hi")
 
+// Color the page
+
+var body = document.querySelector("#body")
+var header = document.querySelector("#header")
+
 function fetchWeatherData(event) {
     event.preventDefault();
     weatherBox.innerHTML = ''
@@ -91,6 +96,9 @@ function fetchRecipeData(event) {
     var tempChoices
     if (temp2 < 32) {
         tempChoices = options[12] + "&dishType=" + options[1] + "&dishType=" + options[0]
+        header.classList.add("headerCold")
+        body.classList.add("cold")
+
     } else if (temp2 > 32 && temp2 < 60) {
         tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" + options[7]
     } else if (temp2 > 60) {
