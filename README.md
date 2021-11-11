@@ -19,7 +19,7 @@ https://whimsical.com/groupproject-1-TKLPds47WdxkxpN6YfgMga
 
 # Credits 2021
 
-Fiona Nicdao 
-Janette Castillo
-Jonathan Parker
+Fiona Nicdao, 
+Janette Castillo,
+Jonathan Parker,
 Josshy Olea
