@@ -10,6 +10,9 @@ We used a combination of 2 APIs for weather and recipe data, combined with javas
 
 https://seasons-of-food.github.io/whats-your-food-temp/
 
+# whimsical wireframe
+https://whimsical.com/groupproject-1-TKLPds47WdxkxpN6YfgMga
+
 # Screenshot
 
 ![whats-your-food-app](whats-your-food-app.jpg)
