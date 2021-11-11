@@ -1,5 +1,6 @@
 main {
     display: flex;
+    flex: wrap;
 }
 
 header {
@@ -12,6 +13,7 @@ header {
 body {
     background-image: url("https://cdn.pixabay.com/photo/2017/10/22/21/41/turmeric-2879382_960_720.jpg");
     background-size: cover;
+    backdrop-filter: blur(2px);
 }
 
 #submit {
@@ -38,9 +40,8 @@ button {
     animation-name: example;
     animation-duration: 10s;
     background-repeat: repeat;
-    /* padding-right: 10rem;
-    border: 10px solid rgba(24, 51, 173, 0.418); */
 }
+
 .weatherbox {
     padding: 10px;
     background-color: #ffffff8f;
@@ -49,6 +50,7 @@ button {
     font-size: 20px;
     text-transform: capitalize;
 }
+
 .recipes {
     padding: 10px;
     background-color: #aaadca63;
@@ -57,14 +59,6 @@ button {
     font-size: 20px;
     text-transform: capitalize;
 }
-
-/* .drinks {
-    background-color: rgba(24, 51, 173, 0.418);
-    padding-right: 10rem;
-}
-.resize {
-    
-} */
 
 .cold {
     background-image: repeating-linear-gradient(to bottom right, rgb(64, 60, 131), rgb(158, 235, 248), blue);
@@ -85,6 +79,8 @@ button {
 .headerMild {
     background-image: url("https://media.giphy.com/media/3ohs7Mss6GTDau1unu/giphy.gif");
     background-size: cover;
+    color: #fff;
+    text-shadow: green 3px 3px;
 }
 
 .hot {
@@ -108,15 +104,16 @@ fieldset {
     margin-bottom: 1rem;
     border-bottom: 20px double rgb(104, 93, 128);
 }
+
 label {
     font-size: 20px;
     margin-bottom: 1rem;
 }
+
 h4 {
     text-decoration: underline;
 }
-/* form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-} */
+
+#time {
+    font-size: 1.5rem;
+}
