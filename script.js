@@ -13,7 +13,7 @@ function clock() {
 }
 clock();
 
-// function to fetch Weather Data
+// function to fetch Weather Data, then calls the Recipe Data function
 function fetchWeatherData(event) {
     event.preventDefault();
     weatherBox.innerHTML = ''
