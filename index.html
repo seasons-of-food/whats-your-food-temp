@@ -18,21 +18,21 @@
         <h1>
             <strong>Good Weather, Good Food, and Good Mood!</strong> 
         </h1>
-        <p id="time">Date and Time </p>
+        <p id="time"> </p>
     </header>
     <form class=form>
-        <h2>Enter a City and Mealtime</h2>
+        <h2 id="sub-title">Enter a City and Choose your Mealtime </h2>
         <input type='text' id='city' placeholder="city name"/>
         <!-- Foundation CSS framework -->
-        <div class="grid-x grid-padding-x">
+        <div class="grid-x grid-padding-x radio">
             <fieldset class="large-5 cell">
-              <legend>Choose Your Mealtime</legend>
-              <input class="input" type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast">Breakfast</label>
-              <input class="input" type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch">Lunch</label>
-              <input class="input" type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner">Dinner</label>
+              <legend></legend>
+              <input class="input" type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast"> <strong>Breakfast</strong></label>
+              <input class="input" type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch"><strong>Lunch</strong></label>
+              <input class="input" type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner"><strong>Dinner</strong></label>
             </fieldset>
           </div>
-        <button id="submit">Submit</button>
+        <button id="submit"><strong>Submit</strong></button>
     </form>
     <main class="grid-x row" class="main">
         <div class="weatherbox columns small-12 large-6"id="weatherbox">Weather</div>

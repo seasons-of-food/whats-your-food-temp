@@ -16,6 +16,11 @@ body {
     backdrop-filter: blur(2px);
 }
 
+#sub-title {
+   font-weight: 700;
+   margin-left: 1rem;
+}
+
 #submit {
     margin-bottom: 1rem;
     margin-left: 2rem;
@@ -96,13 +101,14 @@ button {
 
 #city {
     width: 25%;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 fieldset {
     font-size: 20px;
     margin-bottom: 1rem;
     border-bottom: 20px double rgb(104, 93, 128);
+    margin-left: 1rem;
 }
 
 label {
