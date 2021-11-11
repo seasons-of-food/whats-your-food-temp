@@ -2,18 +2,22 @@ var inputField = document.querySelector("#city")
 var submitButton = document.querySelector("#submit")
 var weatherBox = document.querySelector("#weatherbox")
 var recipesBox = document.querySelector("#recipes")
-// console.log("hi")
-
-// Color the page
 
 var body = document.querySelector("#body")
 var header = document.querySelector("#header")
 
+var time = setInterval(clock, 1000)
+function clock() {
+    var time = moment().format('dddd, MMMM Do YYYY, h:mm:ss a')
+    $("#time").text(time)
+}
+clock();
+
+// function to fetch Weather Data
 function fetchWeatherData(event) {
     event.preventDefault();
     weatherBox.innerHTML = ''
     var cityName = inputField.value
-    // console.log(cityName);
     var apiKey = 'fd531081518e808eb0375251a19ac935'
     var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=' + apiKey
 
@@ -42,6 +46,29 @@ function fetchWeatherData(event) {
             console.log("temp", temp)
             localStorage.setItem("temp", JSON.stringify(temp))
 
+            if (temp < 32) {
+                header.classList.add("headerCold");
+                body.classList.add("cold");
+                header.classList.remove("headerMild");
+                body.classList.remove("mild");
+                header.classList.remove("headerHot");
+                body.classList.remove("hot");
+            } else if (temp > 32 && temp < 60) {
+                header.classList.add("headerMild");
+                body.classList.add("mild");
+                header.classList.remove("headerCold");
+                body.classList.remove("cold");
+                header.classList.remove("headerHot");
+                body.classList.remove("hot");
+            } else if (temp > 60) {
+                header.classList.add("headerHot");
+                body.classList.add("hot");
+                header.classList.remove("headerCold");
+                body.classList.remove("cold");
+                header.classList.remove("headerMild");
+                body.classList.remove("mild");
+            }
+
             var cityName = document.createElement('h4')
             cityName.textContent = weatherData.name
             weatherBox.appendChild(cityName)
@@ -57,27 +84,27 @@ function fetchWeatherData(event) {
             console.log(weatherData.weather[0], icon)
 
             var currentTemp = document.createElement('p')
-            currentTemp.textContent = "Current temperature:" + weatherData.main.temp + "\xB0" + "F"
+            currentTemp.textContent = "Current temperature: " + weatherData.main.temp + "\xB0" + "F"
             weatherBox.appendChild(currentTemp)
 
             var tempHigh = document.createElement('p')
-            tempHigh.textContent = "High temperature:" + weatherData.main.temp_max + "\xB0"+ "F"
+            tempHigh.textContent = "High temperature: " + weatherData.main.temp_max + "\xB0"+ "F"
             weatherBox.appendChild(tempHigh)
 
             var tempLow = document.createElement('p')
-            tempLow.textContent = "Low temperature:" + weatherData.main.temp_min + "\xB0"+ "F"
+            tempLow.textContent = "Low temperature: " + weatherData.main.temp_min + "\xB0"+ "F"
             weatherBox.appendChild(tempLow)
 
         })
     inputField.value = ''
+    fetchRecipeData();
 }
-//add event listener
 
 var choices = ["Breakfast", "Lunch", "Dinner"]
 var mealType
 
-function fetchRecipeData(event) {
-    event.preventDefault();
+// function to fetch Recipe Data
+function fetchRecipeData() {
     recipesBox.innerHTML = ''
 
     if (document.getElementById("breakfast").checked) {
@@ -88,32 +115,19 @@ function fetchRecipeData(event) {
         mealType = choices[2]
     }
 
-
     var temp2 = JSON.parse(localStorage.getItem("temp"))
     console.log("temp2", temp2)
-    // 0                        1        2          3       4           5           6       7           8       9       10          11          12      13          14       
     var options = ["Biscuits and cookies", "bread", "cereals", "desserts", "drinks", "main course", "pancake", "preps", "preserve", "salad", "sandwiches", "side dish", "soup", "starter", "sweets"];
     var tempChoices
     if (temp2 < 32) {
         tempChoices = options[12] + "&dishType=" + options[1] + "&dishType=" + options[0];
-        header.classList.add("headerCold");
-        body.classList.add("cold");
-
     } else if (temp2 > 32 && temp2 < 60) {
         tempChoices = options[10] + "&dishType=" + options[5] + "&dishType=" + options[11] + "&dishType=" + options[7];
-        header.classList.add("headerMild");
-        body.classList.add("mild");
     } else if (temp2 > 60) {
         tempChoices = options[2] + "&dishType=" + options[3] + "&dishType=" + options[4] + "&dishType=" + options[6] + "&dishType=" + options[9] + "&dishType=" + options[13] + "&dishType=" + options[14];
-        header.classList.add("headerHot");
-        body.classList.add("hot");
     }
-    // var mealType = "breakfast"
-    // add mealType id to radio buttons
-    // var apiKey = '8da3cf957b3be5b0a78864d9cb374f8c'
-    // var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + mealType + '&appid=' + apiKey
-    var requestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + mealType + "&app_id=ce747e67&app_key=8da3cf957b3be5b0a78864d9cb374f8c&dishType=" + tempChoices;
 
+    var requestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + mealType + "&app_id=ce747e67&app_key=8da3cf957b3be5b0a78864d9cb374f8c&dishType=" + tempChoices;
 
     fetch(requestUrl)
         //if statement for empty input field
@@ -123,16 +137,12 @@ function fetchRecipeData(event) {
             } 
         })
         .catch(function (error) {
-            // alert('Unable to connect to APIs');
-            var cityName = document.createElement('p')
+          var cityName = document.createElement('p')
             cityName.textContent = 'Error: Check city name. ' + response.statusText
             weatherBox.appendChild(cityName)
         })
         .then(function (recipeData) {
             console.log("recipe", recipeData);
-            // if (recipesBox.length) {
-            //     recipesBox.innerHTML = ""
-            // }
 
             var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
             var select = numbers[Math.floor(Math.random() * numbers.length)]
@@ -175,9 +185,3 @@ function fetchRecipeData(event) {
 }
 
 submitButton.addEventListener('click', fetchWeatherData)
-submitButton.addEventListener('click', fetchRecipeData)
-
-// Select all checked options
-//   var checkedEl = $('input:checked');
-//   var selected = [];
-// weatherBox.innerHTML = ""
