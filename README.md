@@ -15,7 +15,7 @@ https://whimsical.com/groupproject-1-TKLPds47WdxkxpN6YfgMga
 
 # Screenshot
 
-![whats-your-food-app](whats-your-food-app.jpg)
+![image](https://github.com/seasons-of-food/whats-your-food-temp/assets/88861538/251ab8ce-a137-434e-93bb-dffa36fba246)
 
 # Credits 2021
 
