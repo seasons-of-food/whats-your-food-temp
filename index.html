@@ -16,23 +16,24 @@
 <body id ="body">
     <header id ="header">
         <h1>
-            <strong>Good Weather, Good Food, and Good Mood!</strong> 
+            City Weather Plus Food
         </h1>
         <p id="time"> </p>
+        <p>Look up your city and cook up a meal based on the temp!</p>
     </header>
-    <form class=form>
-        <h2 id="sub-title">Enter a City and Choose your Mealtime </h2>
-        <input type='text' id='city' placeholder="city name"/>
+    <form class="" class=form>
+        <h2 class="headerCity" id="sub-title">Enter a City and Choose your Mealtime </h2>
+        <input class="inputCity" type='text' id='city' placeholder="City Name"/>
         <!-- Foundation CSS framework -->
-        <div class="grid-x grid-padding-x radio">
+        <div class=" radioButtons grid-x grid-padding-x radio">
             <fieldset class="large-5 cell">
-              <legend></legend>
-              <input class="input" type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast"> <strong>Breakfast</strong></label>
-              <input class="input" type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch"><strong>Lunch</strong></label>
-              <input class="input" type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner"><strong>Dinner</strong></label>
+                <legend></legend>
+                <input class="input" type="radio" name="mealtime" value="Breakfast" id="breakfast" required><label for="breakfast"> <strong>Breakfast</strong></label>
+                <input class="input" type="radio" name="mealtime"value="Lunch" id="lunch"><label for="lunch"><strong>Lunch</strong></label>
+                <input class="input" type="radio" name="mealtime"value="Dinner" id="dinner"><label for="dinner"><strong>Dinner</strong></label>
             </fieldset>
-          </div>
-        <button id="submit"><strong>Submit</strong></button>
+        </div>
+        <button class="submitButton" id="submit">Submit</button>
     </form>
     <main class="grid-x row" class="main">
         <div class="weatherbox columns small-12 large-6"id="weatherbox">Weather</div>

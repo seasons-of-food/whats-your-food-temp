@@ -5,29 +5,31 @@ main {
 
 header {
     text-align: center;
-    border: 5px double black; 
-    color: #800080;
-    text-shadow: #ffffff 2px 2px 2px;
+    /* border: 5px double black;  */
+    color: #ffffff;
+    text-shadow: #ad5401 2px 2px 2px;
 }
 
 body {
-    background-image: url("https://cdn.pixabay.com/photo/2017/10/22/21/41/turmeric-2879382_960_720.jpg");
+    background-image: url('./fern-1250903_1920.jpg');
     background-size: cover;
-    backdrop-filter: blur(2px);
+
 }
 
-#sub-title {
+/* #sub-title {
    font-weight: 700;
    margin-left: 1rem;
-}
+} */
 
-#submit {
+/* #submit {
     margin-bottom: 1rem;
     margin-left: 2rem;
     padding: 0.5rem;
     border-radius: 20px;
     font-size: 20px;
-}
+    display: flex;
+    justify-content: center;
+} */
 
 #submit:hover {
     box-shadow: rgb(80, 78, 78) 2px 2px 2px;
@@ -36,33 +38,55 @@ body {
 }
 
 @keyframes example {
-    from {background-color: rgb(245, 243, 243);}
-    to {background-color: rgb(89, 207, 236);}
+    0% {background-color: rgba(255, 255, 254, 0.897);}
+    50% {background-color: #9b7836;}
+    100% {background-color: #ffffff;}
 }
 
 button {
-    background-color: white;
+    /* background-color: white; */
     animation-name: example;
-    animation-duration: 10s;
+    animation-duration: 60s;
     background-repeat: repeat;
+    margin-left: 48.2%;
+    margin-bottom: 2rem;
+    padding: .5rem;
+    border-radius: .5rem;
+
 }
 
 .weatherbox {
     padding: 10px;
-    background-color: #ffffff8f;
-    border-right: 20px double rgb(104, 93, 128);
+    background-color: #c2b2958f;
+    border-right: 20px double rgba(6, 8, 7, 0.527);
     padding-right: 5rem;
     font-size: 20px;
     text-transform: capitalize;
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+
+}
+
+#weatherbox {
+    color: rgb(0, 0, 0);
+    font-weight:bolder;
+}
+
+#recipes {
+    font-weight:bolder;
 }
 
 .recipes {
     padding: 10px;
-    background-color: #aaadca63;
+    background-color: #c2b2958f;
     padding-right: 10rem;
-    border-right: 20px double rgb(104, 93, 128);
+    border-right: 20px double rgb(147, 197, 106);
     font-size: 20px;
     text-transform: capitalize;
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
 }
 
 .cold {
@@ -99,21 +123,22 @@ button {
     text-shadow: black 2px 2px;
 }
 
-#city {
+/* #city {
     width: 25%;
     margin-left: 2rem;
-}
+} */
 
 fieldset {
     font-size: 20px;
-    margin-bottom: 1rem;
-    border-bottom: 20px double rgb(104, 93, 128);
+    /* margin-bottom: 1rem;
+    border-bottom: 20px double rgb(104, 93, 128); */
     margin-left: 1rem;
 }
 
 label {
     font-size: 20px;
     margin-bottom: 1rem;
+    color: white;
 }
 
 h4 {
@@ -122,4 +147,37 @@ h4 {
 
 #time {
     font-size: 1.5rem;
+}
+
+.headerCity {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.inputCity {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    margin-left: 45%;
+}
+
+.radioButtons {
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    color: white;
+}
+
+img {
+    max-height: 15%;
+}
+a {
+    color: #161107;
+    text-shadow: #cac9c8;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(253, 209, 87);
 }

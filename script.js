@@ -46,28 +46,28 @@ function fetchWeatherData(event) {
             console.log("temp", temp)
             localStorage.setItem("temp", JSON.stringify(temp))
 
-            if (temp < 32) {
-                header.classList.add("headerCold");
-                body.classList.add("cold");
-                header.classList.remove("headerMild");
-                body.classList.remove("mild");
-                header.classList.remove("headerHot");
-                body.classList.remove("hot");
-            } else if (temp > 32 && temp < 60) {
-                header.classList.add("headerMild");
-                body.classList.add("mild");
-                header.classList.remove("headerCold");
-                body.classList.remove("cold");
-                header.classList.remove("headerHot");
-                body.classList.remove("hot");
-            } else if (temp > 60) {
-                header.classList.add("headerHot");
-                body.classList.add("hot");
-                header.classList.remove("headerCold");
-                body.classList.remove("cold");
-                header.classList.remove("headerMild");
-                body.classList.remove("mild");
-            }
+            // if (temp < 32) {
+            //     header.classList.add("headerCold");
+            //     body.classList.add("cold");
+            //     header.classList.remove("headerMild");
+            //     body.classList.remove("mild");
+            //     header.classList.remove("headerHot");
+            //     body.classList.remove("hot");
+            // } else if (temp > 32 && temp < 60) {
+            //     header.classList.add("headerMild");
+            //     body.classList.add("mild");
+            //     header.classList.remove("headerCold");
+            //     body.classList.remove("cold");
+            //     header.classList.remove("headerHot");
+            //     body.classList.remove("hot");
+            // } else if (temp > 60) {
+            //     header.classList.add("headerHot");
+            //     body.classList.add("hot");
+            //     header.classList.remove("headerCold");
+            //     body.classList.remove("cold");
+            //     header.classList.remove("headerMild");
+            //     body.classList.remove("mild");
+            // }
 
             var cityName = document.createElement('h4')
             cityName.textContent = weatherData.name
